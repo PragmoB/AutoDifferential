@@ -234,5 +234,10 @@ for i in argn :
 print("")
 results = operate(formula, argn, argv)
 
-for i in range(0, len(argn)) :
-    print("df/d" + argn[i] + " = ", results[i])
+if len(argn) == 1 :
+    print("df/d" + argn[0] + " = ", results[0])
+
+# 편미분일때는 연산자가 달라져서 분리해둠 
+elif len(argn) > 1 :   
+    for i in range(0, len(argn)) :
+        print("∂f/∂" + argn[i] + " = ", results[i])
